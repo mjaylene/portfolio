@@ -1,20 +1,12 @@
-function getRandomColor() {
-    var letters = '0123456789ABCDEF';
-    var color = '#';
-    for (var i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
-  }
+document.addEventListener('DOMContentLoaded', function () {
+    var profilePicture = document.querySelector('.profile-picture');
   
-  document.querySelector('.profile-picture').addEventListener('mouseover', function () {
-    var randomColor = getRandomColor();
-    this.style.backgroundImage = 'url(images/bigbnw.png)';
-    this.querySelector('.profile-overlay').style.backgroundColor = randomColor;
-  });
+    profilePicture.addEventListener('mouseover', function () {
+      profilePicture.classList.add('profile-hovered');
+    });
   
-  document.querySelector('.profile-picture').addEventListener('mouseout', function () {
-    this.style.backgroundImage = 'url(images/bigcolorful.png)';
-    this.querySelector('.profile-overlay').style.backgroundColor = 'transparent';
+    profilePicture.addEventListener('mouseout', function () {
+      profilePicture.classList.remove('profile-hovered');
+    });
   });
   

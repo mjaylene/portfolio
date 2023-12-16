@@ -1,12 +1,31 @@
-body, html {
+@font-face {
+  font-family: 'Cochin';
+  src: url('path/to/cochin-regular.ttf') format('truetype');
+  /* Add other font formats if necessary (e.g., woff, woff2) */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Charm';
+  src: url('path/to/charm-regular.ttf') format('truetype');
+  /* Add other font formats if necessary (e.g., woff, woff2) */
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+body,
+html {
   margin: 0;
   padding: 0;
   height: 100%;
-  background-color: black; 
+  background-color: black;
+
 }
 
 .container {
-  height: 100vh; 
+  height: 100vh;
   margin: 0;
 }
 
@@ -14,7 +33,7 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%; 
+  height: 100%;
 }
 
 .video-container {
@@ -25,20 +44,24 @@ body, html {
 }
 
 video {
-  width: 60%; 
-  height: 60%; 
+  width: 60%;
+  height: 60%;
 }
 
 @keyframes fade {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
 }
 
-h1, h2, h3, p {
+h1,
+h2,
+h3,
+p {
   color: aliceblue;
   animation: fade linear both;
   animation-timeline: view();
@@ -55,14 +78,54 @@ h1, h2, h3, p {
   margin: 0%;
 }
 
+
+.intro-container {
+  display: flex;
+  /* Add this line to make the children of .intro-container flex items */
+  margin: 5%;
+  margin-top: 0%;
+  padding: 2%;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro-text {
+  flex: 1;
+  align-items: center;
+}
+
+.subtext-heading,
+.title {
+  margin: 0; /* Remove the default margin */
+}
+
+.subtext-heading {
+  color: #FFF;
+  font-family: 'Cochin';
+  font-size: 60px;
+  margin-right: 20px; /* Add margin between subheading and title */
+  margin-bottom: 5%;
+}
+
+.title {
+  color: #FFF;
+  font-family: 'Charm', cursive;
+  font-size: 90px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 90px;
+}
+
+
 .profile-picture {
   position: relative;
   margin: 0 auto;
   margin-left: 40px;
-  width: 350px;
-  height: 350px;
+  margin-right: 20px;
+  width: 482px;
+  height: 556px;
   overflow: hidden;
-  background: url('images/bigcolorful.png');
+  background: url('images/profilefrbnw.png');
   transition: filter 1s ease; /* Smooth transition for the filter property */
   animation: fade linear both;
   animation-timeline: view();
@@ -70,28 +133,14 @@ h1, h2, h3, p {
 }
 
 .profile-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  opacity: 60%;
-  transition: background-color 1s ease; /* Smooth transition for the background-color property */
+  width: 482px;
+  height: 556px;
+  background: url('images/profilefr.png');
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-.intro-container {
-  display: flex; /* Add this line to make the children of .intro-container flex items */
-  margin: 5%;
-  margin-top: 0%;
-  padding: 2%;
-  justify-content: center;
-  align-items: center;
-  /* background-color: aquamarine; */
+.profile-picture:hover .profile-overlay {
+  opacity: 1;
 }
 
-.intro-text {
-  flex: 1; 
-  padding: 2%; 
-
-}
