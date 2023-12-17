@@ -26,7 +26,8 @@ html {
 
 .container {
   height: 100vh;
-  margin: 0;
+  margin: 8%;
+  margin-top: 0%;
 }
 
 .landing-page {
@@ -41,6 +42,7 @@ html {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-top: -5%;
 }
 
 video {
@@ -82,8 +84,7 @@ p {
 .intro-container {
   display: flex;
   /* Add this line to make the children of .intro-container flex items */
-  margin: 5%;
-  margin-top: 0%;
+  margin: 8%;
   padding: 2%;
   justify-content: center;
   align-items: center;
@@ -102,17 +103,17 @@ p {
 .subtext-heading {
   color: #FFF;
   font-family: 'Cochin';
-  font-size: 60px;
+  font-size: 50px;
   margin-right: 20px; /* Add margin between subheading and title */
   margin-bottom: 5%;
 }
 
 .title {
   color: #FFF;
-  font-family: 'Charm', cursive;
+  font-family: 'Monospace';
   font-size: 90px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: bold;
   line-height: 90px;
 }
 
@@ -123,6 +124,7 @@ p {
   margin-left: 40px;
   margin-right: 20px;
   width: 482px;
+  min-width: 482px;
   height: 556px;
   overflow: hidden;
   background: url('images/profilefrbnw.png');
@@ -132,15 +134,9 @@ p {
   animation-range: entry 50% cover 50%;
 }
 
-.profile-overlay {
-  width: 482px;
-  height: 556px;
-  background: url('images/profilefr.png');
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.profile-picture:hover .profile-overlay {
-  opacity: 1;
+.title.sticky {
+  position: fixed;
+  top: 0;
+  z-index: 1;
 }
 
